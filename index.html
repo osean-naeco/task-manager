@@ -59,10 +59,14 @@
     }
 
     select {
-      min-width: 140px;
-      flex-shrink: 0;
-      appearance: auto;
-    }
+  width: 140px;
+  min-width: 140px;
+  flex: none;
+  position: relative;
+  z-index: 5;
+  -webkit-appearance: auto;
+  appearance: auto;
+}
     input[type="text"] {
       min-width: 0;
       flex: 1;
@@ -279,10 +283,15 @@
       }
 
       select {
-        width: 100%;
-        min-width: 0;
-        appearance: auto;
-      }
+    width: 100%;
+    min-width: 0;
+    flex: none;
+    position: relative;
+    z-index: 5;
+    -webkit-appearance: auto;
+    appearance: auto;
+  }
+}
 
       input[type="text"] {
         width: 100%;
