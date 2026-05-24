@@ -154,6 +154,21 @@
       position: relative;
     }
 
+    .deadline-radio {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.deadline-radio label {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
   .done-image {
     position: absolute;
     top: 50%;
@@ -312,11 +327,11 @@
     <section class="form-area">
       <h2 id="formTitle">タスク登録</h2>
       <div class="form-row">
-        <select id="deadline">
-          <option value="today">今日中</option>
-          <option value="week">今週中</option>
-          <option value="month">今月中</option>
-        </select>
+        <div class="deadline-radio">
+  <label><input type="radio" name="deadline" value="today" checked> 今日中</label>
+  <label><input type="radio" name="deadline" value="week"> 今週中</label>
+  <label><input type="radio" name="deadline" value="month"> 今月中</label>
+</div>
         <input type="text" id="title" placeholder="タスク" />
       </div>
       <textarea id="memo" placeholder="メモ"></textarea>
@@ -353,7 +368,7 @@
     }
 
     function saveTask() {
-      const deadline = document.getElementById("deadline").value;
+      const deadline = document.querySelector('input[name="deadline"]:checked').value;
       const title = document.getElementById("title").value.trim();
       const memo = document.getElementById("memo").value.trim();
 
@@ -398,7 +413,7 @@
     }
 
     function clearForm() {
-      document.getElementById("deadline").value = "today";
+      document.querySelector('input[name="deadline"][value="today"]').checked = true;
       document.getElementById("title").value = "";
       document.getElementById("memo").value = "";
     }
@@ -416,7 +431,7 @@
       if (!task) return;
 
       editingId = id;
-      document.getElementById("deadline").value = task.deadline;
+      document.querySelector(`input[name="deadline"][value="${task.deadline}"]`).checked = true;
       document.getElementById("title").value = task.title;
       document.getElementById("memo").value = task.memo;
       document.getElementById("formTitle").textContent = "タスク更新";
