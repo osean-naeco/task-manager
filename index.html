@@ -9,6 +9,12 @@
       box-sizing: border-box;
     }
 
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       margin: 0;
       font-family: "Baloo 2", "Meiryo", sans-serif;
@@ -261,12 +267,31 @@
     }
 
     @media (max-width: 900px) {
-      .board {
-        grid-template-columns: 1fr;
-      }
 
       .container {
-        padding: 16px;
+        padding: 10px;
+      }
+
+      .board {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .column {
+        width: 100%;
+        padding: 0 10px;
+        min-height: auto;
+      }
+
+      select,
+      input[type="text"] {
+        width: 100%;
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 8px;
       }
     }
   </style>
@@ -426,7 +451,7 @@
 
       setTimeout(() => {
         img.remove();
-      }, 500);
+      }, 1000);
     }
 
     function moveTask(id, direction) {
