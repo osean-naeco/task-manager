@@ -11,7 +11,7 @@
 
     body {
       margin: 0;
-      font-family: "Segoe UI", "Meiryo", sans-serif;
+      font-family: "Baloo 2", "Meiryo", sans-serif;
       background: #f7f7f7;
       color: #333;
     }
@@ -106,7 +106,7 @@
     .column {
       min-height: 420px;
       border-radius: 14px;
-      padding: 8px 16px;
+      padding: 0px 16px;
       border: 3px solid transparent;
     }
 
@@ -127,7 +127,10 @@
 
     .column h2 {
       margin: 0 0 8px;
-      font-size: 20px;
+      color: #5a4724;
+      font-size: 25px;
+      font-weight: 800;
+      font-family: "Comic Sans MS", "Meiryo", sans-serif;
       text-align: center;
     }
 
@@ -290,17 +293,17 @@
 
     <section class="board">
       <div class="column today">
-        <h2>今日中</h2>
+        <h2>Today</h2>
         <div id="todayList" class="task-list"></div>
       </div>
 
       <div class="column week">
-        <h2>今週中</h2>
+        <h2>Week</h2>
         <div id="weekList" class="task-list"></div>
       </div>
 
       <div class="column month">
-        <h2>今月中</h2>
+        <h2>Month</h2>
         <div id="monthList" class="task-list"></div>
       </div>
     </section>
